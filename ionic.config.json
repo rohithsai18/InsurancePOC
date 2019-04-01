@@ -1,0 +1,7 @@
+{
+  "name": "insurancePOC",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
