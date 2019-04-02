@@ -20,7 +20,7 @@ import { LoginPage } from '../pages/login/login';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    LoginPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
