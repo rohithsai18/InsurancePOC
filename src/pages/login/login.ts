@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -30,6 +32,9 @@ export class LoginPage implements OnInit {
       'email':new FormControl('',Validators.required),
       'password':new FormControl('',Validators.required)
     });
+  }
+  navToReg(){
+    this.navCtrl.push('RegistrationPage');
   }
 
 }
