@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Account Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="account-details-modal">
+    <h3 padding>Account Info</h3>
+    <ion-list>
+      <ion-item>
+        <p color="dark">Name</p>
+        <div class="item-note" item-right>
+          {{accountDetails?.result?.accountHolder?.displayName}}
+        </div>
+      </ion-item>
+      <ion-item>
+        <p>Address</p>
+        <div class="item-note address-note" item-right>
+          {{accountDetails?.result?.accountHolder?.primaryAddress?.displayName}}
+        </div>
+      </ion-item>
+      <ion-item *ngFor="let item of accountDetails?.result?.producerCodes">
+        <p>Producer Code</p>
+        <div class="item-note address-note" item-right>
+          {{item?.displayValue}}
+        </div>
+      </ion-item>
+      <ion-item>
+        <p>Total Issued Premium</p>
+        <div class="item-note" item-right>
+          {{accountDetails?.result?.totalPremium?.amount | currency}}
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="issued-policy-modal" *ngFor="let policy of accountDetails?.result?.policySummaries; let i=index">
+    <h3 padding>Issued Policy #{{ i+1}}</h3>
+      <ion-item>
+        <p>Product</p>
+        <div class="item-note" item-right>
+            <ion-icon name="car" color="primary"></ion-icon>
+          </div>
+      </ion-item>
+      <ion-item>
+        <p>Status</p>
+        <div class="item-note" item-right>
+          {{policy?.displayStatus}}
+        </div>
+      </ion-item>
+      <ion-item>
+          <p>Policy Number</p>
+          <div class="item-note" item-right>
+            {{policy?.policyNumber}}
+          </div>
+      </ion-item>
+      <ion-item>
+          <p>Name Insured</p>
+          <div class="item-note" item-right>
+            {{policy?.primaryInsuredName}}
+          </div>
+      </ion-item>
+      <ion-item>
+          <p>Effective Date</p>
+          <div class="item-note" item-right>
+            {{policy?.effective | date}}
+          </div>
+      </ion-item>
+      <ion-item>
+          <p>Expiration Date</p>
+          <div class="item-note" item-right>
+            {{policy?.expiration | date}}
+          </div>
+      </ion-item>
+  </div>
+</ion-content>

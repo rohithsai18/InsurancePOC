@@ -7,23 +7,23 @@
 <ion-content padding>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <ion-item>
-      <ion-label position="floating">Email/Username</ion-label>
+      <ion-label color="dark" position="floating">Email/Username</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
     <div class="error-message" *ngIf="userForm.controls.email.touched && userForm.controls.email.value === ''">
       <p>Please enter a valid Email/UserName.</p>
     </div>
     <ion-item>
-      <ion-label position="floating">Password</ion-label>
+      <ion-label color="dark" position="floating">Password</ion-label>
       <ion-input type="password" formControlName="password">     
       </ion-input>
     </ion-item>
     <div class="error-message" *ngIf="userForm.controls.password.touched && userForm.controls.password.value === ''">
       <p>Please enter a valid Email/UserName.</p>
     </div>
-    <button ion-button  type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Submit</button>
+    <button ion-button  type="submit" class="btn btn-primary login-btn" [disabled]="!userForm.valid">Login</button>
 </form>
-<div>
+<div class="register-container">
   <a (click)="navToReg()">New User register?</a>
 </div>
 </ion-content>
