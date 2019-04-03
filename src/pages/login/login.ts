@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
     this.navCtrl.push('RegistrationPage');
   }
   onSubmit() {
-    this.navCtrl.push('AccountDetailsPage');
+    this.navCtrl.push('AccountDashboardPage');
   }
 
 }

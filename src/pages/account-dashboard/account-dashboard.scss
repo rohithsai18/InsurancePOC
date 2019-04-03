@@ -1,0 +1,23 @@
+@import '../../styles/constants.scss';
+page-account-dashboard {
+    .accnt-container{
+        border: 1px solid $grey;
+        box-shadow: 2px 2px 4px $grey;
+        & > ion-row{
+            margin-bottom:5px;
+        }
+        padding: 10px;
+        margin-bottom: 20px;
+        &:nth-child(2n){
+            background-color:$grey3;
+        }
+        .address-list{
+            ion-row{
+                margin-bottom:5px;
+            }
+        }
+    }
+    .light{
+        color: $grey1;
+    }
+}
