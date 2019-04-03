@@ -1,5 +1,10 @@
 @import '../../styles/constants.scss';
 page-account-details {
+    .log-out{
+        color:white;
+        float:right;
+        font-size:18px;
+    }
     .address-note {
         width: 96px;
         margin: 1px !important;

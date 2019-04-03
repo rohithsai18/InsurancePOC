@@ -1,5 +1,10 @@
 @import '../../styles/constants.scss';
 page-account-dashboard {
+    .log-out{
+        color:white;
+        float:right;
+        font-size:18px;
+    }
     .accnt-container{
         border: 1px solid $grey;
         box-shadow: 2px 2px 4px $grey;

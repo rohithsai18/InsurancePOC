@@ -12,6 +12,9 @@ export class AccountDetailsPage {
   items: any[];
   accountDetails = JSON.parse(Constants.accountDetails);
 
+  logOut(){
+    this.navCtrl.popToRoot()
+  }
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

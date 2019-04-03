@@ -26,10 +26,15 @@ export class LoginPage implements OnInit {
       'password':new FormControl('',Validators.required)
     });
   }
+  reset(){
+    this.userForm.reset();
+  }
   navToReg(){
+    this.reset();
     this.navCtrl.push('RegistrationPage');
   }
   onSubmit() {
+    this.reset();
     this.navCtrl.push('AccountDashboardPage');
   }
 

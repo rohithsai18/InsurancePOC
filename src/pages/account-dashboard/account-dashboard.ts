@@ -25,10 +25,13 @@ export class AccountDashboardPage implements OnInit{
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public accntService:AccountServices) {
   }
-  
+
   navToDetails(){
     this.navCtrl.push('AccountDetailsPage');
   }
+  logOut(){
+    this.navCtrl.popToRoot()
+}
 
   ngOnInit(){
       this.accntsList=this.accntService.getAccntData().accounts['map']((account,index)=>(
