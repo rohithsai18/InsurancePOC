@@ -5,8 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="account-details-modal">
-    <h3 padding>Account Info</h3>
+    <h3 padding>Account Information</h3>
     <ion-list>
       <ion-item>
         <p color="dark">Name</p>
@@ -33,9 +32,8 @@
         </div>
       </ion-item>
     </ion-list>
-  </div>
   <div class="issued-policy-modal" *ngFor="let policy of accountDetails?.result?.policySummaries; let i=index">
-    <h3 padding>Issued Policy #{{ i+1}}</h3>
+    <h3 padding>Issued Policy <ion-badge color="primary">{{ i + 1 }}</ion-badge></h3>
       <ion-item>
         <p>Product</p>
         <div class="item-note" item-right>
