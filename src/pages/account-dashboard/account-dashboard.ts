@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {AccountServices} from '../../services/account-services';
 
-/**
- * Generated class for the AccountDashboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -49,6 +43,11 @@ export class AccountDashboardPage implements OnInit{
     
   }
   ionViewDidLoad() {
+  }
+  goToBilling(){
+    this.navCtrl.push(
+      'BillingDetailsPage'
+    );
   }
 
 }

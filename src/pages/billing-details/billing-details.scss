@@ -1,0 +1,19 @@
+page-billing-details {
+    .log-out{
+        color:white;
+        float:right;
+        font-size:18px;
+    }
+    .account-details-modal,.issued-policy-modal{
+        border: 1px solid $grey;
+        box-shadow: 2px 2px 4px $grey;
+        margin: 10px;
+    }
+    .issued-policy-modal{
+        margin-top: 20px;
+    }
+    .address-note {
+        width: 96px;
+        margin: 1px !important;
+    }
+}

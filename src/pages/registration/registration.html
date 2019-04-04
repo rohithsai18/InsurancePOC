@@ -12,40 +12,35 @@
 
 <ion-content padding>
   <form [formGroup]="registrationForm">
-     <ion-list inset>
+    <ion-list inset>
 
-          <ion-item>
-            <ion-label color="dark">Username</ion-label>
-            <ion-input type="text" formControlName="username"></ion-input>
-         
-          </ion-item>
-        
-          <ion-item>
-            <ion-label color="dark">Password</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
-          </ion-item>
+      <ion-item>
+        <ion-label color="dark">Username</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
 
-          <ion-item>
-              <ion-label color="dark">Confirm Password</ion-label>
-              <ion-input type="password" formControlName="confirmPassword"></ion-input>
-            </ion-item>
+      </ion-item>
 
-            <ion-item>
-                <ion-label color="dark">Email</ion-label>
-                <ion-input type="email" formControlName="email"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label color="dark">Confirm Email</ion-label>
-                  <ion-input type="email" formControlName="confirmEmail"></ion-input>
-                </ion-item>
+      <ion-item>
+        <ion-label color="dark">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
 
-                <ion-item>
-                    <ion-label color="dark">Date</ion-label>
-                    <ion-datetime displayFormat="MM DD YY" placeholder="MM DD YYY"
-                    formControlName="dateOfBirth"></ion-datetime>
-                  </ion-item>
-      
-        </ion-list>
-      </form>
-      <button ion-button  block type="submit" [disabled]="!registrationForm.valid" (click)="register()">Register</button>
+      <ion-item>
+        <ion-label color="dark">Confirm Password</ion-label>
+        <ion-input type="password" formControlName="confirmPassword"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark">Date</ion-label>
+        <ion-datetime displayFormat="MM DD YY" placeholder="MM DD YYY" formControlName="dateOfBirth"></ion-datetime>
+      </ion-item>
+
+    </ion-list>
+  </form>
+  <button ion-button block type="submit" [disabled]="!registrationForm.valid" (click)="register()">Register</button>
 </ion-content>
