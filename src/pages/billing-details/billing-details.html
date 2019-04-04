@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>billing-details
+      <a class="log-out" (click)="logOut()">Log Out</a>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3 padding>Account Information</h3>
+  <ion-list>
+    <ion-item>
+      <p color="dark">Name</p>
+      <div class="item-note" item-right>
+        {{accountDetails?.result?.accountHolder?.displayName}}
+      </div>
+    </ion-item>
+    <ion-item>
+      <p>Address</p>
+      <div class="item-note address-note" item-right>
+        {{accountDetails?.result?.accountHolder?.primaryAddress?.displayName}}
+      </div>
+    </ion-item>
+    <ion-item *ngFor="let item of accountDetails?.result?.producerCodes">
+      <p>Producer Code</p>
+      <div class="item-note address-note" item-right>
+        {{item?.displayValue}}
+      </div>
+    </ion-item>
+  </ion-list>
+  <div class="issued-policy-modal">
+    <h3 padding>Customer Payment Summary</h3>
+    <ion-item>
+      <p>PastDue</p>
+      <div class="item-note address-note" item-right>
+          {{billingData?.pastDue?.amount | currency}}
+      </div>
+    </ion-item>
+    <ion-item>
+      <p>Current Payment</p>
+      <div class="item-note address-note" item-right>
+        {{billingData?.currentDue?.amount | currency}}
+      </div>
+    </ion-item>
+    <ion-item>
+      <p>Colleteral Requirement</p>
+      <div class="item-note address-note" item-right>
+          {{billingData?.currentDue?.amount | currency}}
+      </div>
+    </ion-item>
+    <ion-item>
+      <p>Colleteral Held</p>
+      <div class="item-note address-note" item-right>
+          {{billingData?.currentDue?.amount | currency}}
+      </div>
+    </ion-item>
+  </div>
+  <div class="issued-policy-modal" *ngFor="let policy of billingData?.ownedPolicies">
+      <h3 padding>Issued Policy</h3>
+      <ion-item>
+        <p>Billed Amount</p>
+        <div class="item-note address-note" item-right>
+          {{policy?.billedAmount?.amount | currency}}
+        </div>
+      </ion-item>
+      <ion-item>
+        <p>Past Due</p>
+        <div class="item-note address-note" item-right>
+          {{policy?.pastDueAmount?.amount | currency}}
+        </div>
+      </ion-item>
+      <ion-item>
+        <p>UnBilled</p>
+        <div class="item-note address-note" item-right>
+          {{policy?.unbilledAmount?.amount | currency}}
+        </div>
+      </ion-item>
+      <ion-item>
+        <p>Status</p>
+        <div class="item-note address-note" *ngIf="policy?.isDelinquent === true" item-right>
+            isDelinquent
+        </div>
+        <div class="item-note address-note" *ngIf="policy?.isDelinquent !== true" item-right>
+            inGood Standing
+        </div>
+      </ion-item>
+    </div>
+    <div class="issued-policy-modal" *ngFor="let policy of billingData?.unownedPolicies">
+        <h3 padding>Unowned Policy</h3>
+        <ion-item>
+          <p>Billed Amount</p>
+          <div class="item-note address-note" item-right>
+            {{policy?.billedAmount?.amount | currency}}
+          </div>
+        </ion-item>
+        <ion-item>
+          <p>Past Due</p>
+          <div class="item-note address-note" item-right>
+            {{policy?.pastDueAmount?.amount | currency}}
+          </div>
+        </ion-item>
+        <ion-item>
+          <p>UnBilled</p>
+          <div class="item-note address-note" item-right>
+            {{policy?.unbilledAmount?.amount | currency}}
+          </div>
+        </ion-item>
+        <ion-item>
+          <p>Status</p>
+          <div class="item-note address-note" *ngIf="policy?.isDelinquent === true" item-right>
+              isDelinquent
+          </div>
+          <div class="item-note address-note" *ngIf="policy?.isDelinquent !== true" item-right>
+              inGood Standing
+          </div>
+        </ion-item>
+    </div>
+</ion-content>
