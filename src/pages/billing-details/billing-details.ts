@@ -24,4 +24,8 @@ export class BillingDetailsPage {
     this.accountDetails = JSON.parse(Constants.accountDetails);
   }
 
+  logOut(){
+    this.navCtrl.popToRoot()
+  }
+
 }
