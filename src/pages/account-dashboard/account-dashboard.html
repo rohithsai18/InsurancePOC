@@ -1,0 +1,66 @@
+<!--
+  Generated template for the AccountDashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title>Dashboard
+        <a class="log-out" (click)="logOut()">Log Out</a>
+    </ion-title>
+     
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="accnt-container" *ngFor="let account of accntsList" (click)="navToDetails()">
+      <ion-row >
+          <ion-col size='8' class="light">
+              Account
+            </ion-col>
+            <ion-col size='4'>
+                {{account.holderName}}
+              </ion-col>
+        </ion-row>
+        <ion-row >
+            <ion-col size='8' class="light">
+                Policies
+              </ion-col>
+              <ion-col size='4'>
+                  {{account.policyCount}}
+                </ion-col>
+          </ion-row>
+          <ion-row >
+              <ion-col size='8' class="light">
+                  Date created
+                </ion-col>
+                <ion-col size='4'>
+                    {{account.accountCreated|date:'M/dd/yy'}}
+                  </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size='8' class="light">
+                    Address
+                  </ion-col>
+                  <ion-col size='4' class="address-list">
+                   <ion-row>
+                        {{account.address?.addressLine1}},
+                        </ion-row>
+                        <ion-row>
+                        {{account.address?.city}},
+                        </ion-row>
+                        {{account.address?.state}} {{account.address?.postalCode}} 
+                    </ion-col>
+              </ion-row>
+              <ion-row >
+                  <ion-col size='8' class="light">
+                      Open Activites
+                    </ion-col>
+                    <ion-col size='4'>
+                        {{account.openActivities}}
+                      </ion-col>
+                </ion-row>
+    </ion-grid>
+
+</ion-content>

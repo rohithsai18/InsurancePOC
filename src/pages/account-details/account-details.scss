@@ -1,11 +1,17 @@
+@import '../../styles/constants.scss';
 page-account-details {
+    .log-out{
+        color:white;
+        float:right;
+        font-size:18px;
+    }
     .address-note {
         width: 96px;
         margin: 1px !important;
     }
     .account-details-modal,.issued-policy-modal{
-        border: 1.5px solid;
-        box-shadow: 5px 10px #cfc7c7;
+        border: 1px solid $grey;
+        box-shadow: 2px 2px 4px $grey;
         margin: 10px;
     }
     .issued-policy-modal{

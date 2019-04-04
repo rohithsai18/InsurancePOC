@@ -13,6 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
+import { AccountServices } from '../services/account-services';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { LoginPage } from '../pages/login/login';
   providers: [
     StatusBar,
     SplashScreen,
+    AccountServices,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
