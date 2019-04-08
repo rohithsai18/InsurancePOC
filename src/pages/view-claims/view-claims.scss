@@ -1,0 +1,19 @@
+page-view-claims {
+    .claim-container{
+        border: 1px solid $grey;
+        box-shadow: 2px 2px 4px $grey;
+        padding: 10px;
+        margin: 30px auto 75px auto;
+        border-radius:10px;
+        & > ion-row{
+            margin-bottom:5px;
+            padding-left: 25px;
+        }
+        &:nth-child(2n){
+            background-color:$grey3;
+        }
+    }
+    .light{
+        color: $grey1;
+    }
+}
