@@ -14,54 +14,27 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="goToBilling()">Billing</button>
-  <ion-grid class="accnt-container" *ngFor="let account of accntsList" (click)="navToDetails()">
-      <ion-row >
-          <ion-col size='8' class="light">
-              Account
+  <ion-grid class="accnt-container" (click)="navToPage('billing')">
+      <ion-row>
+          <ion-col size='12' class="light">
+              Billing Details
             </ion-col>
-            <ion-col size='4'>
-                {{account.holderName}}
-              </ion-col>
         </ion-row>
-        <ion-row >
-            <ion-col size='8' class="light">
-                Policies
-              </ion-col>
-              <ion-col size='4'>
-                  {{account.policyCount}}
-                </ion-col>
-          </ion-row>
-          <ion-row >
-              <ion-col size='8' class="light">
-                  Date created
-                </ion-col>
-                <ion-col size='4'>
-                    {{account.accountCreated|date:'M/dd/yy'}}
-                  </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col size='8' class="light">
-                    Address
-                  </ion-col>
-                  <ion-col size='4' class="address-list">
-                   <ion-row>
-                        {{account.address?.addressLine1}},
-                        </ion-row>
-                        <ion-row>
-                        {{account.address?.city}},
-                        </ion-row>
-                        {{account.address?.state}} {{account.address?.postalCode}} 
-                    </ion-col>
-              </ion-row>
-              <ion-row >
-                  <ion-col size='8' class="light">
-                      Open Activites
-                    </ion-col>
-                    <ion-col size='4'>
-                        {{account.openActivities}}
-                      </ion-col>
-                </ion-row>
     </ion-grid>
+    <ion-grid class="accnt-container" (click)="navToPage('account')">
+      <ion-row>
+          <ion-col size='12' class="light">
+              Account Details
+            </ion-col>
+        </ion-row>
+  </ion-grid>
+  <ion-grid class="accnt-container" (click)="navToPage('claim')">
+      <ion-row>
+          <ion-col size='12' class="light">
+              View Claim
+            </ion-col>
+        </ion-row>
+  </ion-grid>
+  
 
 </ion-content>

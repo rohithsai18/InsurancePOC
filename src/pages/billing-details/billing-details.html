@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>billing-details
+    <ion-title>Billing-details
       <a class="log-out" (click)="logOut()">Log Out</a>
     </ion-title>
   </ion-navbar>
@@ -55,8 +55,8 @@
       </div>
     </ion-item>
   </div>
-  <div class="issued-policy-modal" *ngFor="let policy of billingData?.ownedPolicies">
-      <h3 padding>Issued Policy</h3>
+  <div class="issued-policy-modal" *ngFor="let policy of billingData?.ownedPolicies;let i=index">
+      <h3 padding>Issued Policy <ion-badge color="primary">{{ i + 1 }}</ion-badge></h3>
       <ion-item>
         <p>Billed Amount</p>
         <div class="item-note address-note" item-right>

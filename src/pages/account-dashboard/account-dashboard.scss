@@ -1,18 +1,17 @@
-@import '../../styles/constants.scss';
+@import '../../styles/styles.scss';
 page-account-dashboard {
-    .log-out{
-        color:white;
-        float:right;
-        font-size:18px;
-    }
     .accnt-container{
         border: 1px solid $grey;
         box-shadow: 2px 2px 4px $grey;
+        text-align: center;
+        height: 110px;
+        width: 50%;
+        padding: 10px;
+        margin: 30px auto 75px auto;
+        border-radius:10px;
         & > ion-row{
             margin-bottom:5px;
         }
-        padding: 10px;
-        margin-bottom: 20px;
         &:nth-child(2n){
             background-color:$grey3;
         }
@@ -20,6 +19,26 @@ page-account-dashboard {
             ion-row{
                 margin-bottom:5px;
             }
+        }
+        &:nth-child(1){
+            background-image:url('../assets/imgs/billing_details.png');
+            background-repeat:no-repeat;
+            background-position: center top 22px;
+            padding-top: 56px;
+        }
+        &:nth-child(2){
+            background-image:url('../assets/imgs/account_details.png');
+            background-repeat:no-repeat;
+            background-position: center top 22px;
+            background-size: 35px;
+            padding-top: 60px;
+        }
+        &:nth-child(3){
+            background-image:url('../assets/imgs/claims.png');
+            background-repeat:no-repeat;
+            background-position: center top 22px;
+            background-size: 35px;
+            padding-top: 60px;
         }
     }
     .light{
