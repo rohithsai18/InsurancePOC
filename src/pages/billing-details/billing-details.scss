@@ -1,8 +1,9 @@
 page-billing-details {
     .account-details-modal,.issued-policy-modal{
         border: 1px solid $grey;
-        box-shadow: 2px 2px 4px $grey;
+        box-shadow: 2px 2px 4px #dedede;
         margin: 10px;
+        border-radius: 10px;
     }
     .issued-policy-modal{
         margin-top: 20px;
